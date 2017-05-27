@@ -13,7 +13,7 @@ import {HomeComponent} from './home/home.component';
 import {NgModule} from '@angular/core';
 import {AuthService} from './auth.service';
 import {AuthGuard} from './auth-guard.service';
-import {CanDeactivateGuard} from "./servers/edit-server/can-deactivate-guard.service";
+import {CanDeactivateGuard} from './servers/edit-server/can-deactivate-guard.service';
 
 const appRoutes: Routes = [
   {
