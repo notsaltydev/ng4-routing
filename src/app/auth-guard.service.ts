@@ -1,10 +1,10 @@
 /**
  * Created by adamnieslony on 27.05.2017.
  */
-import {ActivatedRouteSnapshot, CanActivate, CanActivateChild, Router, RouterStateSnapshot} from "@angular/router";
-import {Observable} from "rxjs/Observable";
-import {Injectable} from "@angular/core";
-import {AuthService} from "./auth.service";
+import {ActivatedRouteSnapshot, CanActivate, CanActivateChild, Router, RouterStateSnapshot} from '@angular/router';
+import {Observable} from 'rxjs/Observable';
+import {Injectable} from '@angular/core';
+import {AuthService} from './auth.service';
 
 @Injectable()
 
