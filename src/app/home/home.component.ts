@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {AuthService} from '../auth.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-home',
@@ -9,17 +10,13 @@ import {AuthService} from '../auth.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private router: Router, private authService: AuthService) {
-  }
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
   }
 
-  onLoadServers() {
-    this.router.navigate(['/servers']);
-  }
-
   onLoadServer(id: number) {
+    // complex calculation
     this.router.navigate(['/servers', id, 'edit'], {queryParams: {allowEdit: '1'}, fragment: 'loading'});
   }
 

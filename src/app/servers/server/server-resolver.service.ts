@@ -1,10 +1,8 @@
-/**
- * Created by adamnieslony on 30.05.2017.
- */
-import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
-import {Observable} from 'rxjs/Observable';
-import {Injectable} from '@angular/core';
-import {ServersService} from '../servers.service';
+import { Resolve, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import { Injectable } from '@angular/core';
+
+import { ServersService } from '../servers.service';
 
 interface Server {
   id: number;
@@ -13,14 +11,10 @@ interface Server {
 }
 
 @Injectable()
-export class ServerResolverService implements Resolve<Server> {
+export class ServerResolver implements Resolve<Server> {
+  constructor(private serversService: ServersService) {}
 
-  constructor(private serverService: ServersService) {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Server> | Promise<Server> | Server {
+    return this.serversService.getServer(+route.params['id']);
   }
-
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Server | Observable<Server> | Promise<Server> {
-    return this.serverService.getServer(+route.params['id']);
-  }
-
-
 }

@@ -1,7 +1,3 @@
-/**
- * Created by adamnieslony on 27.05.2017.
- */
-
 export class AuthService {
   loggedIn = false;
 

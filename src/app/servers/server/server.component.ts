@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params, Router, Data } from '@angular/router';
 
-import {ServersService} from '../servers.service';
-import {ActivatedRoute, Data, Params, Router} from '@angular/router';
+import { ServersService } from '../servers.service';
 
 @Component({
   selector: 'app-server',
@@ -9,7 +9,7 @@ import {ActivatedRoute, Data, Params, Router} from '@angular/router';
   styleUrls: ['./server.component.css']
 })
 export class ServerComponent implements OnInit {
-  server: { id: number, name: string, status: string };
+  server: {id: number, name: string, status: string};
 
   constructor(private serversService: ServersService,
               private route: ActivatedRoute,
